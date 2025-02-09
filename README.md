@@ -40,10 +40,10 @@ Run the script to store project files in ChromaDB:
 python chunk_code.py
 ```
 
-### **3️⃣ Run the Code Search**
+### **3️⃣ Run the Code Chat**
 To query the stored code, run:
 ```bash
-python search_code.py
+python chat.py
 ```
 Then, enter a query such as:
 ```
@@ -54,7 +54,7 @@ The script will retrieve relevant snippets and generate a response.
 ---
 
 ## 📌 Switching to Another LLM
-By default, this repo uses **Mistral 7B**. To use a different model, change this line in `search_code.py`:
+By default, this repo uses **Mistral 7B**. To use a different model, change this line in `chat.py`:
 ```python
 response = ollama.chat(model="mistral", messages=[{"role": "user", "content": prompt}])
 ```

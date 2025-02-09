@@ -3,7 +3,7 @@ import ollama
 
 # Load ChromaDB
 chroma_client = chromadb.PersistentClient(path="./chroma_db")
-collection = chroma_client.get_collection(name="portal-angular")  # More generic name
+collection = chroma_client.get_collection(name="chunk-database")  # Path to the resporitory you are analizing
 
 def search_code(query):
     # Retrieve top 3 relevant snippets
