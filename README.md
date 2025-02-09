@@ -9,9 +9,9 @@ This repository provides a simple **local RAG system** that allows you to retrie
 ### **1️⃣ Create a Python Virtual Environment**
 Before installing dependencies, it's recommended to create a virtual environment:
 ```bash
-python -m venv venv  # Create virtual environment
-source venv/bin/activate  # Activate on macOS/Linux
-venv\Scripts\activate  # Activate on Windows
+python -m venv my-env  # Create virtual environment
+source my-env/bin/activate  # Activate on macOS/Linux
+my-env\Scripts\activate  # Activate on Windows
 ```
 
 ### **2️⃣ Install Required Packages**
@@ -26,12 +26,12 @@ pip install langchain chromadb ollama
 
 ### **1️⃣ Modify `chunk_code.py` for Your Project**
 Before running, update the **project path** in `chunk_code.py`:
-```python
-extract_code_chunks("./portal-angular")  # Change this to your project path
 ```
-Optionally, modify the **database name** in:
-```python
-collection = chroma_client.get_or_create_collection(name="angular_code")
+extract_code_chunks("./path-to-your-repository")  # Change this to your project path
+```
+Set the file extensions of the files you want to chunk:
+```
+file.endswith(('.ts', '.html', '.scss'))
 ```
 
 ### **2️⃣ Extract Code Chunks**

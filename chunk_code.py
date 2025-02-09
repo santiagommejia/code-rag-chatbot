@@ -4,7 +4,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 # Initialize vector store
 chroma_client = chromadb.PersistentClient(path="./chroma_db")
-collection = chroma_client.get_or_create_collection(name="chunk-database")
+collection = chroma_client.get_or_create_collection(name="code_repository")
 
 # Configure chunking
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
@@ -27,5 +27,5 @@ def extract_code_chunks(root_dir):
                     )
 
 # Run chunking
-extract_code_chunks("./path-to-your-codebase")  # Change to your Angular project path
+extract_code_chunks("./path-to-your-repository")  # Change to your project path
 print("✅ Code chunks stored in ChromaDB.")
